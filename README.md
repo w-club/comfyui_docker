@@ -11,11 +11,8 @@ This build is specifically optimized to resolve complex dependency conflicts (â€
 
 Before running this container, ensure your host machine meets the following requirements:
 
-- **NVIDIA GPU** with up-to-date drivers installed  
-  - Refer to [NVIDIA Driver Downloads](https://www.nvidia.com/Download/index.aspx)
+- **NVIDIA GPU** with up-to-date drivers installed 
 - **Docker** and **Docker Compose** installed  
-  - [Install Docker](https://docs.docker.com/get-docker/)  
-  - [Install Docker Compose](https://docs.docker.com/compose/install/)
 - **NVIDIA Container Toolkit** installed and configured  
   - This is **strictly required** for the container to access your GPU.  
   - [NVIDIA Container Toolkit â€“ Install Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
