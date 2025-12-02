@@ -62,7 +62,7 @@ You can organize your host machine like this:
 ```text
 .
 ├── docker-compose.yml
-├── comfyui/          # (Optional) Override ComfyUI core from container
+├── comfyui/          # ComfyUI core from container
 └── ai/
     ├── models/       # Models: checkpoints, LoRA, VAE, etc.
     ├── output/       # Generated images
@@ -91,7 +91,6 @@ services:
 
     volumes:
       # Map the ComfyUI core directory
-      # (Optional: comment/remove if you want to keep the container’s built-in version)
       - ./comfyui:/comfyui
 
       # Models storage (Checkpoints, LoRAs, VAEs, etc.)
@@ -148,10 +147,9 @@ This image has been customized to address specific dependency issues found in **
 
 ---
 
-## 🔍 Notes & Tips
+## 🔍 Notes & Requirements
 
+- **Required:** NVIDIA drivers and `nvidia-container-toolkit` **must** be correctly installed on the host, otherwise GPU access will not work.
+- **Required:** The `./comfyui:/comfyui` bind mount **must** be present for this setup, as the container expects ComfyUI to live at `/comfyui` inside the container.
 - You can still install additional custom nodes via **ComfyUI-Manager** inside the UI.
-- If you want a fully immutable container, you can remove the `./comfyui:/comfyui` bind mount and rely solely on the image’s built-in ComfyUI.
-- For best performance, ensure:
-  - NVIDIA drivers and `nvidia-container-toolkit` are correctly installed on the host.
-  - You have enough VRAM for your chosen models and workflows.
+- Ensure you have enough VRAM for your chosen models and workflows.
