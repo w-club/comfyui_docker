@@ -7,9 +7,8 @@ USER_HOME="/home/${USER_NAME}"
 COMFY="/comfyui"
 COMFY_GIT="https://github.com/comfyanonymous/ComfyUI.git"
 C_M_GIT="https://github.com/ltdrdata/ComfyUI-Manager.git"
-
-# 檢查新的環境變數 COMFY_MODE，預設為 'single' (單人)
-COMFY_MODE=${COMFY_MODE:-single}
+MULTI_USER=${MULTI_USER:-false}
+USER_DATA_DIR="${COMFY}/user"
 RUN_ARGS="--listen 0.0.0.0 --port 8188"
 
 # Check if ComfyUI is installed
@@ -21,15 +20,17 @@ else
 fi
 
 # Check if ComfyUI-Manager is installed
-if [ -d "${COMFY}/custom_nodes/ComfyUI-Manager" ]; then
+if [ -d "${COMFY}/custom_nodes/comfyui-manager" ]; then
   echo "ComfyUI-Manager is already installed."
 else
-  git clone ${C_M_GIT} ${COMFY}/custom_nodes/ComfyUI-Manager
+  git clone ${C_M_GIT} ${COMFY}/custom_nodes/comfyui-manager
   echo "ComfyUI-Manager installed successfully."
 fi
 
 # Single or Multi user
-if [ "$COMFY_MODE" = "multi" ]; then
+RUN_ARGS="${RUN_ARGS} --user-directory ${USER_DATA_DIR}"
+
+if [ "$MULTI_USER" = "true" ]; then
     RUN_ARGS="${RUN_ARGS} --multi-user"
     echo "Starting ComfyUI in MULTI-USER mode."
 else
