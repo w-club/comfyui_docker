@@ -25,4 +25,5 @@ export PUID PGID
 git config --global --add safe.directory ${COMFY}
 
 # Run the app
+echo "Running ComfyUI..."
 exec /workspace/run_comfy.sh
