@@ -7,16 +7,27 @@ This build is specifically optimized to resolve complex dependency conflicts (�
 
 ---
 
+## 📋 Prerequisites
+
+Before running this container, ensure your host machine meets the following requirements:
+
+- **NVIDIA GPU** with up-to-date drivers installed  
+- **Docker** and **Docker Compose** installed  
+- **NVIDIA Container Toolkit** installed and configured  
+  - This is **strictly required** for the container to access your GPU.
+
+---
+
 ## 📦 Core Components
 
-- **[ComfyUI](https://github.com/comfyanonymous/ComfyUI)**  
-  The most powerful and modular Stable Diffusion GUI.
+### ComfyUI
+The most powerful and modular Stable Diffusion GUI.
 
-- **[ComfyUI-Manager](https://github.com/Comfy-Org/ComfyUI-Manager)**  
-  Essential extension for managing custom nodes and models directly from the UI.
+### ComfyUI-Manager
+Essential extension for managing custom nodes and models directly from the UI.
 
-- **[PyTorch Docker Image](https://hub.docker.com/layers/pytorch/pytorch/2.9.0-cuda13.0-cudnn9-runtime/images/sha256-1ba3f20399f5e4f9835cde308a4de86c3e63ba098caee367e490ec5455afc02a)**  
-  Base environment running **PyTorch 2.9.1** with **CUDA 13.0** runtime.
+### PyTorch Docker Image
+Base environment running **PyTorch 2.9.1** with **CUDA 13.0** runtime.
 
 ---
 
