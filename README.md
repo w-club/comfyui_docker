@@ -15,10 +15,10 @@ services:
       - 8188:8188
     volumes:
       - ./comfyui:/comfyui
-      - /calibur/ai/models:/comfyui/models
-      - /calibur/ai/output:/comfyui/output
-      - /calibur/ai/input:/comfyui/input
-      - /calibur/ai/user:/comfyui/user
+      - ./ai/models:/comfyui/models
+      - ./ai/output:/comfyui/output
+      - ./ai/input:/comfyui/input
+      - ./ai/user:/comfyui/user
     deploy:
       resources:
         reservations:
