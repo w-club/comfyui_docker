@@ -59,6 +59,9 @@ Pre-resolved Python requirements are included for:
 - **[DZ-FaceDetailer](https://github.com/nicofdga/DZ-FaceDetailer)**  
   Essential tool for face restoration and detailing.
 
+- **[ComfyUI-Easy-Use](https://github.com/yolain/ComfyUI-Easy-Use)**  
+  Easy control for mutiple nodes.
+
 - **[comfyui_LLM_party](https://github.com/heshengtao/comfyui_LLM_party)**  
   Integration for Large Language Models (OpenAI, Claude, etc.).
 
